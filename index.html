@@ -22,39 +22,28 @@
   }
 </script>
 <script>
-  /* PWA install prompt + button — needed because some Android browsers (e.g. Vivaldi)
-     only mint a standalone WebAPK via beforeinstallprompt; the menu "Add to Home screen"
-     makes a browser shortcut with a generic icon. */
+  /* The bundled app rebuilds <head> on boot and drops our PWA <link> tags, which made
+     Chrome report "no-manifest" and refuse to install (only a grey home-screen shortcut).
+     Re-add the manifest + icon links and keep them present so installability passes. */
   (function () {
-    var deferred = null, btn = null;
-    function inStandalone() {
-      return (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches)
-        || window.navigator.standalone === true;
+    function ensure(sel, rel, href, extra) {
+      if (!document.head || document.head.querySelector(sel)) return;
+      var l = document.createElement('link');
+      l.rel = rel; l.href = href;
+      if (extra) for (var k in extra) l.setAttribute(k, extra[k]);
+      document.head.appendChild(l);
     }
-    function hide() { if (btn) { btn.remove(); btn = null; } }
-    function show() {
-      if (btn || inStandalone() || !document.body) return;
-      btn = document.createElement('button');
-      btn.textContent = '⤓ Install app';
-      btn.setAttribute('aria-label', 'Install this app');
-      btn.style.cssText = 'position:fixed;left:50%;bottom:18px;transform:translateX(-50%);'
-        + 'z-index:2147483647;font:600 15px/1 -apple-system,BlinkMacSystemFont,sans-serif;'
-        + 'color:#3a2f1a;background:#fff;border:1px solid rgba(0,0,0,.15);border-radius:999px;'
-        + 'padding:12px 22px;box-shadow:0 4px 14px rgba(0,0,0,.18);cursor:pointer;';
-      btn.addEventListener('click', function () {
-        if (!deferred) return;
-        deferred.prompt();
-        deferred.userChoice.then(function () { deferred = null; hide(); });
-      });
-      document.body.appendChild(btn);
+    function ensureAll() {
+      ensure('link[rel="manifest"]', 'manifest', 'manifest.webmanifest');
+      ensure('link[rel="apple-touch-icon"]', 'apple-touch-icon', 'apple-touch-icon.png');
+      ensure('link[rel="icon"]', 'icon', 'icon-192.png', { type: 'image/png', sizes: '192x192' });
     }
-    window.addEventListener('beforeinstallprompt', function (e) {
-      e.preventDefault();
-      deferred = e;
-      if (document.body) show();
-      else window.addEventListener('DOMContentLoaded', show);
-    });
-    window.addEventListener('appinstalled', function () { deferred = null; hide(); });
+    ensureAll();
+    document.addEventListener('DOMContentLoaded', ensureAll);
+    window.addEventListener('load', ensureAll);
+    // Keep re-adding across the app's boot window; observe top-level <head> swaps too.
+    var n = 0, iv = setInterval(function () { ensureAll(); if (++n > 40) clearInterval(iv); }, 500);
+    try { new MutationObserver(ensureAll).observe(document.documentElement, { childList: true }); } catch (e) {}
   })();
 </script>
   <style>
