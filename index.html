@@ -21,6 +21,42 @@
     });
   }
 </script>
+<script>
+  /* PWA install prompt + button — needed because some Android browsers (e.g. Vivaldi)
+     only mint a standalone WebAPK via beforeinstallprompt; the menu "Add to Home screen"
+     makes a browser shortcut with a generic icon. */
+  (function () {
+    var deferred = null, btn = null;
+    function inStandalone() {
+      return (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches)
+        || window.navigator.standalone === true;
+    }
+    function hide() { if (btn) { btn.remove(); btn = null; } }
+    function show() {
+      if (btn || inStandalone() || !document.body) return;
+      btn = document.createElement('button');
+      btn.textContent = '⤓ Install app';
+      btn.setAttribute('aria-label', 'Install this app');
+      btn.style.cssText = 'position:fixed;left:50%;bottom:18px;transform:translateX(-50%);'
+        + 'z-index:2147483647;font:600 15px/1 -apple-system,BlinkMacSystemFont,sans-serif;'
+        + 'color:#3a2f1a;background:#fff;border:1px solid rgba(0,0,0,.15);border-radius:999px;'
+        + 'padding:12px 22px;box-shadow:0 4px 14px rgba(0,0,0,.18);cursor:pointer;';
+      btn.addEventListener('click', function () {
+        if (!deferred) return;
+        deferred.prompt();
+        deferred.userChoice.then(function () { deferred = null; hide(); });
+      });
+      document.body.appendChild(btn);
+    }
+    window.addEventListener('beforeinstallprompt', function (e) {
+      e.preventDefault();
+      deferred = e;
+      if (document.body) show();
+      else window.addEventListener('DOMContentLoaded', show);
+    });
+    window.addEventListener('appinstalled', function () { deferred = null; hide(); });
+  })();
+</script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: #faf9f5; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
