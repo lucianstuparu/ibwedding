@@ -1,5 +1,5 @@
 // Service worker — caches the whole app for offline use.
-const CACHE = 'wedding-run-v5';
+const CACHE = 'wedding-run-v6';
 const ASSETS = [
   'index.html',
   'manifest.webmanifest',
