@@ -1,0 +1,476 @@
+{
+  "title": "Transylvania Wedding Run",
+  "dates": "25–28 Jun 2026",
+  "routeSummary": "Geneva → Luton → Brașov → Bunești / Meșendorf → Sibiu → Geneva",
+  "passengers": [
+    "LUC",
+    "LUD",
+    "CA",
+    "LI"
+  ],
+  "contact": {
+    "label": "Autonom · car rental",
+    "phone": "+40 721 442 266"
+  },
+  "days": [
+    {
+      "chip": "25",
+      "dateLabel": "THU 25",
+      "title": "Luton night",
+      "color": "thu",
+      "tagline": "Fly out of Geneva, sleep by the airport",
+      "items": [
+        {
+          "type": "flight",
+          "airline": "easyJet",
+          "flightNo": "EZY2538",
+          "start": [
+            2026,
+            6,
+            25,
+            20,
+            20
+          ],
+          "end": [
+            2026,
+            6,
+            25,
+            21,
+            0
+          ],
+          "duration": "1h40",
+          "from": {
+            "code": "GVA",
+            "city": "Geneva",
+            "flag": "CH",
+            "time": "20:20"
+          },
+          "to": {
+            "code": "LTN",
+            "city": "Luton",
+            "flag": "GB",
+            "time": "21:00"
+          },
+          "atAirport": "18:50",
+          "gateClose": "20:00",
+          "booking": "KCFX9NV",
+          "seats": "25F LUC · 25C LUD · 25D CA · 25E LI"
+        },
+        {
+          "type": "stay",
+          "name": "Holiday Inn Express",
+          "start": [
+            2026,
+            6,
+            25,
+            21,
+            30
+          ],
+          "end": [
+            2026,
+            6,
+            26,
+            5,
+            30
+          ],
+          "city": "Luton",
+          "flag": "GB",
+          "when": "Thu 25, overnight",
+          "walk": "600 m walk from the terminal",
+          "address": "2 Percival Way, LU2 9GP",
+          "ref": "5WSEe0k-_"
+        }
+      ]
+    },
+    {
+      "chip": "26",
+      "dateLabel": "FRI 26",
+      "title": "Reach Brașov",
+      "color": "fri",
+      "tagline": "Pre-dawn start, fly to Transylvania, grab the car",
+      "items": [
+        {
+          "type": "event",
+          "time": "05:35",
+          "icon": "bed",
+          "title": "Leave the hotel",
+          "start": [
+            2026,
+            6,
+            26,
+            5,
+            35
+          ],
+          "detail": "Walk 600 m back to the airport"
+        },
+        {
+          "type": "flight",
+          "airline": "Wizz Air",
+          "flightNo": "W9 5399",
+          "start": [
+            2026,
+            6,
+            26,
+            7,
+            25
+          ],
+          "end": [
+            2026,
+            6,
+            26,
+            12,
+            40
+          ],
+          "duration": "3h15",
+          "from": {
+            "code": "LTN",
+            "city": "Luton",
+            "flag": "GB",
+            "time": "07:25"
+          },
+          "to": {
+            "code": "GHV",
+            "city": "Brașov–Ghimbav",
+            "flag": "RO",
+            "time": "12:40"
+          },
+          "atAirport": "05:55",
+          "gateClose": "07:05",
+          "booking": "HJFCWF",
+          "seats": "12F LUC · 10B LUD · 12E CA · 10C LI"
+        },
+        {
+          "type": "car",
+          "mode": "pickup",
+          "title": "Pick up the car",
+          "start": [
+            2026,
+            6,
+            26,
+            13,
+            0
+          ],
+          "end": [
+            2026,
+            6,
+            26,
+            13,
+            30
+          ],
+          "place": "Brașov–Ghimbav airport",
+          "time": "From 13:00",
+          "model": "VW T-Cross or similar",
+          "sub": "Collect right after you land",
+          "ref": "AUTBVM01-8306",
+          "phone": "+40 721 442 266"
+        }
+      ]
+    },
+    {
+      "chip": "27",
+      "dateLabel": "FRI / SAT",
+      "title": "Wedding area",
+      "color": "wed",
+      "tagline": "Drive to the village — then the main event",
+      "items": [
+        {
+          "type": "drive",
+          "title": "Drive to the village",
+          "start": [
+            2026,
+            6,
+            26,
+            15,
+            30
+          ],
+          "end": [
+            2026,
+            6,
+            26,
+            17,
+            0
+          ],
+          "when": "Friday afternoon",
+          "stops": [
+            "GHV",
+            "BUN",
+            "MES"
+          ],
+          "segs": [
+            "1h20–1h35",
+            "15–20 min"
+          ],
+          "flag": "RO",
+          "note": "Civil union in Bunești · Fri 13:00 — we probably won't make it in time"
+        },
+        {
+          "type": "stay",
+          "name": "Meșendorf Gasthaus",
+          "start": [
+            2026,
+            6,
+            26,
+            16,
+            0
+          ],
+          "city": "Meșendorf",
+          "flag": "RO",
+          "when": "Rooms from Fri 16:00",
+          "walk": "Parking in front of the residence",
+          "map": "https://maps.app.goo.gl/wyQhXpd9vJcxDxoH6",
+          "address": "Meșendorf village",
+          "ref": null
+        },
+        {
+          "type": "event",
+          "time": "Fri 18:30",
+          "icon": "utensils",
+          "title": "Friday dinner",
+          "start": [
+            2026,
+            6,
+            26,
+            18,
+            30
+          ],
+          "end": [
+            2026,
+            6,
+            26,
+            22,
+            0
+          ],
+          "detail": "Gather 18:30 · then wine, stories & campfire"
+        },
+        {
+          "type": "event",
+          "time": "Sat 08:30",
+          "icon": "clock",
+          "title": "Breakfast window",
+          "start": [
+            2026,
+            6,
+            27,
+            8,
+            30
+          ],
+          "end": [
+            2026,
+            6,
+            27,
+            10,
+            30
+          ],
+          "detail": "Open 08:30 – 10:30"
+        },
+        {
+          "type": "event",
+          "time": "Sat 14:30",
+          "icon": "heart",
+          "title": "Ceremony in the orchard",
+          "start": [
+            2026,
+            6,
+            27,
+            14,
+            30
+          ],
+          "end": [
+            2026,
+            6,
+            27,
+            16,
+            0
+          ],
+          "detail": "Cocktails + photos after",
+          "highlight": true,
+          "color": "pink"
+        },
+        {
+          "type": "event",
+          "time": "Sat 17:00",
+          "icon": "utensils",
+          "title": "Outdoor dinner",
+          "start": [
+            2026,
+            6,
+            27,
+            17,
+            0
+          ],
+          "end": [
+            2026,
+            6,
+            27,
+            23,
+            0
+          ],
+          "detail": "Party kicks off after"
+        }
+      ]
+    },
+    {
+      "chip": "28",
+      "dateLabel": "SUN 28",
+      "title": "Early return",
+      "color": "sun",
+      "tagline": "Pre-dawn drive to Sibiu, fly home via Vienna",
+      "items": [
+        {
+          "type": "event",
+          "time": "01:15",
+          "icon": "clock",
+          "title": "Wake / final pack",
+          "start": [
+            2026,
+            6,
+            28,
+            1,
+            15
+          ],
+          "detail": null
+        },
+        {
+          "type": "drive",
+          "title": "Drive to Sibiu",
+          "start": [
+            2026,
+            6,
+            28,
+            1,
+            45
+          ],
+          "end": [
+            2026,
+            6,
+            28,
+            3,
+            45
+          ],
+          "when": "Leave 01:45",
+          "stops": [
+            "MES",
+            "SBZ"
+          ],
+          "segs": [
+            "1h45–2h10"
+          ],
+          "flag": "RO",
+          "note": "Arrive Sibiu airport around 03:30–03:45",
+          "map": "https://maps.app.goo.gl/TCKqy3EkovRKdgVE6"
+        },
+        {
+          "type": "car",
+          "mode": "return",
+          "title": "Return the car",
+          "start": [
+            2026,
+            6,
+            28,
+            4,
+            0
+          ],
+          "end": [
+            2026,
+            6,
+            28,
+            4,
+            30
+          ],
+          "place": "Sibiu airport",
+          "time": "04:00",
+          "model": "Buffer before handoff",
+          "sub": "Autonom colleague will be waiting",
+          "ref": "AUTBVM01-8306",
+          "phone": "+40 721 442 266"
+        },
+        {
+          "type": "flight",
+          "airline": "Austrian",
+          "flightNo": "OS710",
+          "start": [
+            2026,
+            6,
+            28,
+            6,
+            0
+          ],
+          "end": [
+            2026,
+            6,
+            28,
+            6,
+            15
+          ],
+          "duration": "1h15",
+          "from": {
+            "code": "SBZ",
+            "city": "Sibiu",
+            "flag": "RO",
+            "time": "06:00"
+          },
+          "to": {
+            "code": "VIE",
+            "city": "Vienna",
+            "flag": "AT",
+            "time": "06:15"
+          },
+          "atAirport": "03:30",
+          "gateClose": "05:40",
+          "booking": "9YCTFN",
+          "seats": "Carry-on + personal item"
+        },
+        {
+          "type": "flight",
+          "airline": "Austrian",
+          "flightNo": "OS151",
+          "start": [
+            2026,
+            6,
+            28,
+            7,
+            20
+          ],
+          "end": [
+            2026,
+            6,
+            28,
+            8,
+            50
+          ],
+          "duration": "1h30",
+          "from": {
+            "code": "VIE",
+            "city": "Vienna",
+            "flag": "AT",
+            "time": "07:20"
+          },
+          "to": {
+            "code": "GVA",
+            "city": "Geneva",
+            "flag": "CH",
+            "time": "08:50"
+          },
+          "atAirport": "Connection in Vienna",
+          "gateClose": "07:00",
+          "booking": "9YCTFN",
+          "seats": "Lands Geneva T1"
+        }
+      ]
+    }
+  ],
+  "info": {
+    "bags": [
+      "Wizz: 40×30×20 cm each — 0 checked",
+      "Austrian: carry-on + personal item — 0 checked"
+    ],
+    "car": [
+      "ID / passport + driving licence",
+      "Physical bank card in the driver's name"
+    ],
+    "verify": [
+      "Civil union time in Bunești",
+      "Autonom pickup spot + seats"
+    ]
+  }
+}

@@ -5,7 +5,27 @@ rediscovering everything. Read `README.md` (same repo) for hosting/TLS; this fil
 the **modify → deploy → verify** loop. Pairs with the general `runbooks/create-pwa.md`
 guide in the **`our.infra`** repo.
 
-## TL;DR
+## ⭐ Itinerary text/data → edit `journey.json` (no decoding!)
+
+**All itinerary content now lives in plain `journey.json`** (title, dates, route, days,
+items — flights/stays/cars/drives/events, with times, seats, booking refs, maps links,
+and the `start`/`end` `[Y,M,D,h,m]` datetimes that drive the now/next focus). To change a
+time, seat, note, add a stop, etc.:
+
+```bash
+git clone https://github.com/lucianstuparu/ibwedding.git && cd ibwedding
+# edit journey.json directly (normal JSON, readable diffs)
+git commit -am "update itinerary" && git push
+```
+
+The app fetches `journey.json` at startup; the SW serves it **network-first**, so a data
+edit appears on the next online load **without an SW bump** (CF/HTTP cache ~10 min — hard-
+refresh for instant). It's also precached for offline. The copy embedded in the bundle
+(`c2358d71`) is only an offline fallback for a first-ever visit; keep it roughly in sync if
+you like, but editing `journey.json` is enough. **Only design/component changes need the
+bundle-decoding flow below.**
+
+## TL;DR (component / design changes only)
 
 ```bash
 git clone https://github.com/lucianstuparu/ibwedding.git && cd ibwedding
