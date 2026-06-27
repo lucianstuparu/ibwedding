@@ -418,7 +418,7 @@
           "atAirport": "03:30",
           "gateClose": "05:40",
           "booking": "9YCTFN",
-          "seats": "Carry-on + personal item"
+          "seats": "20B LUC · 20D LUD · 20A CA · 20C LI"
         },
         {
           "type": "flight",
@@ -454,7 +454,7 @@
           "atAirport": "Connection in Vienna",
           "gateClose": "07:00",
           "booking": "9YCTFN",
-          "seats": "Lands Geneva T1"
+          "seats": "22D LUC · 22A LUD · 22F CA · 22C LI"
         }
       ]
     }
